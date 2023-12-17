@@ -1,3 +1,16 @@
+# App preview-
+![image](https://github.com/stayadi07/Task-manager-app/assets/98824627/18815733-cc2d-45e4-bb1a-2e4e05b42e50)
+![image](https://github.com/stayadi07/Task-manager-app/assets/98824627/a45367a9-518b-497a-a226-45d5f10e055f)
+![image](https://github.com/stayadi07/Task-manager-app/assets/98824627/665ec775-49ce-42fd-b1c0-7e339d0cb8f7)
+
+# Steps to run the application
+1. Clone the github repository
+2. dailytasks is the frontend folder and server is the backend folder
+3. Go to dailytasks and run npm install in the terminal
+4. Run npm start
+5. Go to server directory and run npm install folder
+6. Run nodemon server.js for backend server
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
