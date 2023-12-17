@@ -1,0 +1,33 @@
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 92vh;
+}
+
+.task-input-box {
+  margin: 32px;
+  width: 80vh;
+  height: 5vh;
+  border: none;
+  border-radius: 11px;
+}
+
+.edit-btn,
+.delete-btn,
+.save-btn {
+  margin-left: 24px;
+  vertical-align: baseline;
+  margin-top: 12px;
+}
+
+.task-data {
+  font-size: larger;
+  font-weight: 600;
+}
+
+.edit-input-box {
+  margin-top: 12px;
+  border: none;
+  border-radius: 5px;
+}
