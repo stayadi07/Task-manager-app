@@ -1,7 +1,7 @@
 # App preview-
 ![image](https://github.com/stayadi07/Task-manager-app/assets/98824627/18815733-cc2d-45e4-bb1a-2e4e05b42e50)
 ![image](https://github.com/stayadi07/Task-manager-app/assets/98824627/a45367a9-518b-497a-a226-45d5f10e055f)
-![image](https://github.com/stayadi07/Task-manager-app/assets/98824627/665ec775-49ce-42fd-b1c0-7e339d0cb8f7)
+![image](https://github.com/stayadi07/Task-manager-app/assets/98824627/2fe05083-1d90-4543-af91-eafd515cd191)
 
 # Steps to run the application
 1. Clone the github repository
