@@ -8,6 +8,8 @@ import { useDispatch } from "react-redux";
 const Header = () => {
   const [logoutPopupOpen, setLogoutPopupOpen] = useState(false);
   const [newTask, setNewTask] = useState("");
+  const [error, setError] = useState("");
+
   const dispatch = useDispatch();
 
   const openLogoutPopup = () => {
@@ -19,8 +21,14 @@ const Header = () => {
   };
 
   const handleAddTask = () => {
-    dispatch(addTask(newTask));
-    setNewTask("");
+    if (newTask.trim() !== "") {
+      dispatch(addTask(newTask));
+      setNewTask("");
+    } else {
+      setError("Task cannot be empty!!!");
+      return;
+    }
+    setError("");
   };
 
   return (
@@ -39,18 +47,15 @@ const Header = () => {
             >
               Add Task
             </button>
-            <div className="user-container" onClick={openLogoutPopup}>
+            <div className="user-container">
               <img className="avatar-container" src={Avatar} alt="Avatar" />
-
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="1em"
-                viewBox="0 0 512 512"
-                fill="#fff"
-                className="logout-icon"
+              <button
+                type="button"
+                onClick={openLogoutPopup}
+                className="ml-2 btn btn-outline-light"
               >
-                <path d="M497 273L329 441c-15 15-41 4.5-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32 41-17l168 168c9.3 9.4 9.3 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96c-53 0-96 43-96 96v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z" />
-              </svg>
+                Logout
+              </button>
             </div>
             {logoutPopupOpen && (
               <Logout isOpen={logoutPopupOpen} onClose={closeLogoutPopup} />
@@ -58,7 +63,7 @@ const Header = () => {
           </div>
         </nav>
       </div>
-      <Homepage newTask={newTask} setNewTask={setNewTask} />
+      <Homepage newTask={newTask} setNewTask={setNewTask} error={error} />
     </div>
   );
 };

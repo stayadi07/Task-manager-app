@@ -4,9 +4,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectTasks, editTask, deleteTask } from "../../Reducers/taskSlice";
 import "./homepage.css";
 
-const Homepage = ({ newTask, setNewTask }) => {
+const Homepage = ({ newTask, setNewTask, error }) => {
   const dispatch = useDispatch();
   const tasks = useSelector(selectTasks);
+  console.log(error);
 
   const [editedTask, setEditedTask] = useState({ id: null, text: "" });
 
@@ -34,7 +35,8 @@ const Homepage = ({ newTask, setNewTask }) => {
           placeholder="Type your task here"
         />
       </div>
-      <h2>Lists of Tasks</h2>
+      {error && <p className="error-message">{error}</p>}
+      <h2 className="list-of-tasks">Lists of Tasks</h2>
       <div className="task-list-container">
         <ol>
           {tasks.map((task) => (
@@ -57,20 +59,22 @@ const Homepage = ({ newTask, setNewTask }) => {
               ) : (
                 <>
                   {task.text}
-                  <button
-                    className="edit-btn btn btn-dark"
-                    onClick={() =>
-                      setEditedTask({ id: task.id, text: task.text })
-                    }
-                  >
-                    Edit
-                  </button>
-                  <button
-                    className="delete-btn btn btn-danger"
-                    onClick={() => handleDeleteTask(task.id)}
-                  >
-                    Delete
-                  </button>
+                  <div className="button-container">
+                    <button
+                      className="edit-btn btn btn-dark"
+                      onClick={() =>
+                        setEditedTask({ id: task.id, text: task.text })
+                      }
+                    >
+                      Edit
+                    </button>
+                    <button
+                      className="delete-btn btn btn-danger"
+                      onClick={() => handleDeleteTask(task.id)}
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </>
               )}
             </li>

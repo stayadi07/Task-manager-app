@@ -6,7 +6,8 @@
 }
 
 .task-input-box {
-  margin: 32px;
+  margin-top: 32px;
+  margin-bottom: 16px;
   width: 80vh;
   height: 5vh;
   border: none;
@@ -30,4 +31,8 @@
   margin-top: 12px;
   border: none;
   border-radius: 5px;
+}
+
+.list-of-tasks {
+  padding: 16px 0px 16px 24px;
 }
